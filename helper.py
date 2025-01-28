@@ -4,6 +4,7 @@ from numpy import genfromtxt
 from collections import defaultdict
 import pandas as pd
 import tensorflow as tf
+from tensorflow.keras.models import Model
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import train_test_split
 import csv

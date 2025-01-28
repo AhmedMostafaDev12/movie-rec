@@ -11,7 +11,7 @@ def l2_normalize(x):
 app = Flask(__name__)
 
 # Load the trained model
-model = tf.keras.models.load_model('saved_model.h5', custom_objects={'l2_normalize': l2_normalize}, compile=False)
+model = tf.keras.models.load_model('trained_model.h5', custom_objects={'l2_normalize': l2_normalize}, compile=False)
 
 # Load and scale the data
 item_train, user_train, y_train, item_features, user_features, item_vecs, movie_dict = load_data()
@@ -76,7 +76,6 @@ def movies_predict(user_vec):
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        print("new req")
         user_data = request.get_json()
         data = list(default.values())
         keys = list(default.keys())
@@ -95,5 +94,5 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-print("starting")
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
