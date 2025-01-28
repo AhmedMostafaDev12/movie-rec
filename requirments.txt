@@ -4,6 +4,6 @@ pandas
 flask
 pydantic
 numpy
-tensorflow
+#tensorflow
 scikit-learn
-uvicorn
+#uvicorn
