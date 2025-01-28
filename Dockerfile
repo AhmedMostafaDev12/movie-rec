@@ -1,5 +1,5 @@
 # Use the official Python image from the Docker Hub
-FROM python:3.8-slim
+FROM python:3.12-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -20,4 +20,4 @@ EXPOSE 5000
 ENV FLASK_ENV=production
 
 # Use Gunicorn to run the Flask app
-CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:$PORT", "-w", "2"]
+CMD ["gunicorn", "prdiction:app", "--bind", "0.0.0.0:5000"]
