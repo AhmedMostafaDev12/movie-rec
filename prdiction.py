@@ -76,6 +76,7 @@ def movies_predict(user_vec):
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
+        print("new req")
         user_data = request.get_json()
         data = list(default.values())
         keys = list(default.keys())
@@ -94,5 +95,5 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+print("starting")
+app.run(debug=True)
