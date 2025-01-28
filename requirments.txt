@@ -1,0 +1,9 @@
+tensorflow-cpu
+tabulate
+pandas
+flask
+pydantic
+numpy
+tensorflow
+scikit-learn
+uvicorn
