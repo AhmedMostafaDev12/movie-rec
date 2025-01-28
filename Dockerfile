@@ -20,4 +20,4 @@ EXPOSE 5000
 ENV FLASK_ENV=production
 
 # Use Gunicorn to run the Flask app
-CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:$PORT"]
+CMD ["python", "prdiction.py"]
